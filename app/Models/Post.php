@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+
+    // Mass Assignmentの設定（設定しないとデータ登録できない）
+    protected $fillable = ['title', 'content'];
 }

@@ -19,4 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{id}', [PostController::class, 'show']);
+// /posts/・・・の形式になると必ず実行されてしまうため、以下をコメントアウト
+// Route::get('/posts/{id}', [PostController::class, 'show']);
+
+// 課題_データの作成機能とバリデーションを実装しよう
+Route::get('/posts/create', [PostController::class, 'create']);
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
